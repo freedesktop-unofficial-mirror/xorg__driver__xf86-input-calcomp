@@ -31,7 +31,7 @@
  * authorization  from Martin Kroeker or Daveg GmbH.
  *
  */
-/* $XFree86: xc/programs/Xserver/hw/xfree86/input/calcomp/xf86Calcomp.c,v 1.8 2003/01/15 03:43:58 dawes Exp $ */
+/* $XFree86$ */
 
 #define _CALCOMP_C_
 /*****************************************************************************
