@@ -60,7 +60,7 @@
  *	Local Variables
  ****************************************************************************/
 
-InputDriverRec CALCOMP = {
+_X_EXPORT InputDriverRec CALCOMP = {
                 1,
                 "calcomp",
                 NULL,
@@ -161,7 +161,11 @@ CalcompSetupProc(       pointer module,
 
                                                                                                 
                                                                                                 
-XF86ModuleData calcompModuleData = { &VersionRec, CalcompSetupProc, NULL };
+_X_EXPORT XF86ModuleData calcompModuleData = {
+    &VersionRec,
+    CalcompSetupProc,
+    NULL
+};
                                                                                                 
                                                                                                 
 #endif /* XFree86LOADER */
