@@ -686,8 +686,6 @@ CalcompPreInit(       InputDriverPtr drv,
 	priv->checksum = 0;
 	priv->buffer = XisbNew (local->fd, 200);
 
-	DBG (9, XisbTrace (priv->buffer, 1));
-
 	/* 
 	 * Verify that your hardware is attached and fuctional if you can
 	 */
