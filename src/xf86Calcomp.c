@@ -132,7 +132,9 @@ static const char *reqSymbols[] = {
         "xf86CollectInputOptions",
         "xf86ErrorFVerb",
         "xf86FindOptionValue",
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
         "xf86GetMotionEvents",
+#endif
         "xf86GetVerbosity",
         "xf86MotionHistoryAllocate",
         "xf86NameCmp",
@@ -308,7 +310,10 @@ DeviceInit (DeviceIntPtr dev)
 	 * this example device reports motions on 2 axes in absolute coordinates.
 	 * Device may reports touch pressure on the 3rd axis.
 	 */
-	if (InitValuatorClassDeviceStruct (dev, 3, xf86GetMotionEvents,
+	if (InitValuatorClassDeviceStruct (dev, 3,
+#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
+                    xf86GetMotionEvents,
+#endif
 									local->history_size, Absolute) == FALSE)
 	{
 		ErrorF ("Unable to allocate CALCOMP ValuatorClassDeviceStruct\n");
