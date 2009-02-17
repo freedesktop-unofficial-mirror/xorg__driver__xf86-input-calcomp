@@ -26,6 +26,13 @@ AC_INIT([xf86-input-calcomp],
         [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg],
         xf86-input-calcomp)
 
+AC_MSG_ERROR([
+              **************************************************************
+              This driver is unmaintained and will not receive further
+              patches. If you have a need for this driver, please file a bug
+              on http://bugs.freedesktop.org.
+              **************************************************************])
+
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR(.)
 AM_INIT_AUTOMAKE([dist-bzip2])
@@ -91,5 +98,6 @@ AC_SUBST([DRIVER_NAME])
 XORG_MANPAGE_SECTIONS
 XORG_RELEASE_VERSION
 XORG_CHANGELOG
+
 
 AC_OUTPUT([Makefile src/Makefile man/Makefile])
